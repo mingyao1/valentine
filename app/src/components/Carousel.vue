@@ -126,6 +126,8 @@ export default {
   width: 100%;
   max-width: 520px;
   margin: 0 auto 10px;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .carousel {
@@ -140,23 +142,28 @@ export default {
 .carousel-inner {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .carousel-slide {
+  width: 100%;
   min-width: 100%;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .photo-frame {
-  padding: 15px;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .photo {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  display: block;
   border-radius: 14px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .caption {
@@ -235,11 +242,16 @@ export default {
 /* Responsive */
 @media (max-width: 600px) {
   .carousel-container {
-    max-width: 95%;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .photo-frame {
+    padding: 8px;
   }
 
   .photo {
-    height: 250px;
+    height: 300px;
   }
 
   .caption {
