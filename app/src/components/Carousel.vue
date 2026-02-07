@@ -159,8 +159,8 @@ export default {
 
 .photo {
   width: 100%;
-  height: 350px;
-  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   object-position: center;
   display: block;
   border-radius: 14px;
@@ -248,10 +248,6 @@ export default {
 
   .photo-frame {
     padding: 8px;
-  }
-
-  .photo {
-    height: 300px;
   }
 
   .caption {
