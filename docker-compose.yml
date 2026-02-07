@@ -1,9 +1,9 @@
 services:
   valentine-web:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: valentine_site
     ports:
       - "80:80"
-    volumes:
-      - .:/usr/share/nginx/html
     restart: always
